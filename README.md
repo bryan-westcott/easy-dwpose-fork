@@ -119,3 +119,10 @@ skeleton.save("skeleton.png")
 We thank the original authors of the [DWPose](https://github.com/IDEA-Research/DWPose) for their incredible models!
 
 Thanks for open-sourcing!
+
+## Fork Information
+
+This fork was created from upstream easy_dwpose to support issues with 
+`onnxruntime` of 1.16.X unavailable from pypi.
+
+- Add support for `onnxruntime` (and `onnxruntime-gpu`) of 1.17 and greater as version 1.16.X appears to be no longer available
