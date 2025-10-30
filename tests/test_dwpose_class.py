@@ -1,15 +1,17 @@
 from PIL import Image
+from pathlib import Path
 
 from easy_dwpose import DWposeDetector
 from easy_dwpose.draw.mimic_motion import draw_pose as draw_pose_mimic_motion
 from easy_dwpose.draw.musepose import draw_pose as draw_pose_musepose
 
 SAVE_SIZE = (256, 448)
+ASSETS_DIR = Path(__file__).resolve().parent.parent / "assets"
 
 
 def test_forward():
     detector = DWposeDetector()
-    input = Image.open("assets/pose.png").convert("RGB")
+    input = Image.open(f"{ASSETS_DIR}/pose.png").convert("RGB")
     result = detector(input, output_type="pil", include_hands=True, include_face=True)
 
     return result
@@ -17,7 +19,7 @@ def test_forward():
 
 def test_replace_drawing_musepose():
     detector = DWposeDetector()
-    input = Image.open("assets/pose.png").convert("RGB")
+    input = Image.open(f"{ASSETS_DIR}/pose.png").convert("RGB")
     result = detector(input, output_type="pil", draw_pose=draw_pose_musepose, draw_face=False)
 
     return result
@@ -25,7 +27,7 @@ def test_replace_drawing_musepose():
 
 def test_replace_drawing_mimic_motion():
     detector = DWposeDetector()
-    input = Image.open("assets/pose.png").convert("RGB")
+    input = Image.open(f"{ASSETS_DIR}/pose.png").convert("RGB")
     result = detector(input, output_type="pil", draw_pose=draw_pose_mimic_motion)
 
     return result
