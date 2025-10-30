@@ -10,16 +10,16 @@ dependencies = [
     "numpy>=1.26.4,<2",
     "omegaconf==2.3.0",
     "onnxruntime>=1.17,<2.0 ; sys_platform == 'darwin'",
-    "onnxruntime-gpu>=1.17,<2.0 ; sys_platform == 'linux'",
+    "onnxruntime-gpu>=1.17,<2.0 ; sys_platform == 'linux'",  # cuda 12.x support from 1.17, tested through 1.20
     "loguru>=0.7.2,<0.8",
     "tqdm>=4.66.5,<5",
     "imageio>=2.9.0,<3",
-    "huggingface_hub>=0.24.6,<0.25",
+    "huggingface_hub>=0.24.6,<2",  # tested through 1.0.1
     "matplotlib>=3.9.2,<4",
 ]
 
 [dependency-groups]
-dev = ["pytest>=6.2.5,<7"]
+dev = ["pytest>=6.2,<9"]  # tested through 8.4
 
 [build-system]
 # Install with: `uv pip install -e .`
