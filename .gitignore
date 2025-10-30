@@ -6,3 +6,5 @@ test*.png
 checkpoints/
 ./*.png
 dist/
+*.egg
+*.egg-info
