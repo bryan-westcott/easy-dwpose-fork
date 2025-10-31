@@ -1,3 +1,7 @@
-# Keep tests/assets out of release archives
-tests/ export-ignore
 assets/ export-ignore
+tests/  export-ignore
+assets/ export-ignore
+*.gif   export-ignore
+*.png   export-ignore
+*.jpg   export-ignore
+*.jpeg  export-ignore
