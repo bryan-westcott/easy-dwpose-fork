@@ -37,8 +37,9 @@ build-backend = "setuptools.build_meta"
 
 # so we can use src as editable package
 # with: uv pip install -e .
-[tool.setuptools]
-package-dir = { "" = "src" }
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests", "tests.*", "assets", "*.gif", "*.png"]
 
 [tool.setuptools.exclude-package-data]
 # exclude test assets from any package
