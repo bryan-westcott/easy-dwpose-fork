@@ -8,3 +8,12 @@ checkpoints/
 dist/
 *.egg
 *.egg-info
+
+# ONLY FOR no-lfs BRANCH FOR PACKAGING
+*.gif
+*.png
+*.mp4
+*.jpeg
+*.jpg
+tests/
+assets/
