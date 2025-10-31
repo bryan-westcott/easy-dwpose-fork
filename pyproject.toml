@@ -41,10 +41,6 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 exclude = ["tests", "tests.*", "assets", "*.gif", "*.png"]
 
-[tool.setuptools.exclude-package-data]
-# exclude test assets from any package
-"" = ["tests/*", "tests/**/*", "assets/*", "assets/**/*"]
-
 [tool.pytest.ini_options]
 testpaths = ["tests/"]
 python_files = ["test_dwpose_class.py"]
