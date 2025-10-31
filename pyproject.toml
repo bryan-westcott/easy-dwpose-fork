@@ -6,7 +6,7 @@ authors = []
 requires-python = ">=3.9"
 dependencies = [
     "torch>=2.2.2,<3",
-    "opencv-python>=4.10.0.84,<5",
+    "opencv-python-contrib>=4.10.0.84,<5",  # use the superset of all opencv variants
     "numpy>=1.26.4,<2",
     "omegaconf==2.3.0",
     "onnxruntime>=1.17,<2.0 ; sys_platform == 'darwin'",
@@ -21,11 +21,26 @@ dependencies = [
 [dependency-groups]
 dev = ["pytest>=6.2,<9"]  # tested through 8.4
 
+[tool.uv]
+# prevent duplicate (and conflicting) opencv, so use the most complete
+# version: contrib (extra modules), non-headeless (has gui even if not used)
+override-dependencies = [
+  "opencv-python>=4.10.0.84 ; sys_platform == 'never'",
+  "opencv-python-headless>=4.10.0.84 ; sys_platform == 'never'",
+  "opencv-contrib-python-headless>=4.10.0.84 ; sys_platform == 'never'",
+]
+
 [build-system]
 # Install with: `uv pip install -e .`
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
+# so we can use src as editable package
+# with: uv pip install -e .
+[tool.setuptools]
+package-dir = { "" = "src" }
+
 [tool.pytest.ini_options]
 testpaths = ["tests/"]
 python_files = ["test_dwpose_class.py"]
+
