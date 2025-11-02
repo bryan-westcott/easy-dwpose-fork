@@ -1,13 +1,13 @@
 [project]
 name = "easy-dwpose"
-version = "1.0.3"
+version = "1.0.4"
 description = "A fork of easy_dwpose"
 authors = []
 requires-python = ">=3.9"
 dependencies = [
     "torch>=2.2.2,<3",
     "opencv-contrib-python>=4.10.0.84,<5",  # use the superset of all opencv variants
-    "numpy>=1.26.4,<2",
+    "numpy>=1.26,<3",
     "omegaconf==2.3.0",
     "onnxruntime>=1.17,<2.0 ; sys_platform == 'darwin'",
     "onnxruntime-gpu>=1.17,<2.0 ; sys_platform == 'linux'",  # cuda 12.x support from 1.17, tested through 1.20
