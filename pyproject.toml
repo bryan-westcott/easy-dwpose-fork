@@ -1,6 +1,6 @@
 [project]
 name = "easy-dwpose"
-version = "1.0.4"
+version = "1.0.5"
 description = "A fork of easy_dwpose"
 authors = []
 requires-python = ">=3.9"
@@ -9,8 +9,8 @@ dependencies = [
     "opencv-contrib-python>=4.10.0.84,<5",  # use the superset of all opencv variants
     "numpy>=1.26,<3",
     "omegaconf==2.3.0",
-    "onnxruntime>=1.17,<2.0 ; sys_platform == 'darwin'",
-    "onnxruntime-gpu>=1.17,<2.0 ; sys_platform == 'linux'",  # cuda 12.x support from 1.17, tested through 1.20
+    "onnxruntime>=1.19,<2.0 ; sys_platform == 'darwin'",
+    "onnxruntime-gpu>=1.19,<2.0 ; sys_platform == 'linux'",  # cuda 12.x from 1.17, numpy 2 from 1.19, tested through 1.20
     "loguru>=0.7.2,<0.8",
     "tqdm>=4.66.5,<5",
     "imageio>=2.9.0,<3",
@@ -19,7 +19,7 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["pytest>=6.2,<9"]  # tested through 8.4
+dev = ["pytest>=6.2,<9"]  # pytest tested through 8.4
 
 [tool.uv]
 # prevent duplicate (and conflicting) opencv, so use the most complete
