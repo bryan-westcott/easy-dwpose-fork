@@ -1,6 +1,6 @@
 [project]
 name = "easy-dwpose"
-version = "1.0.5"
+version = "1.0.2.post3"
 description = "A fork of easy_dwpose"
 authors = []
 requires-python = ">=3.9"
