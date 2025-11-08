@@ -10,7 +10,7 @@ dependencies = [
     "numpy>=1.26,<3",
     "omegaconf==2.3.0",
     "onnxruntime>=1.19,<1.21 ; sys_platform == 'darwin'",
-    "onnxruntime-gpu>=1.19,<1.21; sys_platform == 'linux'",  # cuda 12.x from 1.17, numpy 2 from 1.19, fails after 1.20
+    "onnxruntime-gpu>=1.19,<1.21; sys_platform == 'linux'",  # cuda 12.x from 1.17, numpy 2 from 1.19, fails after 1.20, use 1.19 for compute capability 5.2
     "loguru>=0.7.2,<0.8",
     "tqdm>=4.66.5,<5",
     "imageio>=2.9.0,<3",
